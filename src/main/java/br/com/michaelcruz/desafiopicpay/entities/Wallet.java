@@ -30,9 +30,17 @@ public class Wallet {
 
     @ManyToOne
     @JoinColumn(name="wallet_type_id")
-    private WalltetType walletType;
+    private WalletType walletType;
 
     public Wallet() {}
+
+    public Wallet(String fullName, String cpfCnpj, String email, String password, WalletType walletType) {
+        this.fullName = fullName;
+        this.cpfCnpj = cpfCnpj;
+        this.email = email;
+        this.password = password;
+        this.walletType = walletType;
+    }
 
     public Long getId() {
         return id;
@@ -82,11 +90,11 @@ public class Wallet {
         this.balance = balance;
     }
 
-    public WalltetType getWalletType() {
+    public WalletType getWalletType() {
         return walletType;
     }
 
-    public void setWalletType(WalltetType walletType) {
+    public void setWalletType(WalletType walletType) {
         this.walletType = walletType;
     }
 }
