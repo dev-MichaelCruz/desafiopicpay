@@ -3,6 +3,7 @@ package br.com.michaelcruz.desafiopicpay.controller;
 import br.com.michaelcruz.desafiopicpay.dto.CreateWalletDto;
 import br.com.michaelcruz.desafiopicpay.entities.Wallet;
 import br.com.michaelcruz.desafiopicpay.service.WalletService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,7 +17,7 @@ public class WalletController {
     private WalletService walletService;
 
     @PostMapping("/wallets")
-    public ResponseEntity<Wallet> createWallet(@RequestBody CreateWalletDto createWalletDto) {
+    public ResponseEntity<Wallet> createWallet(@RequestBody @Valid CreateWalletDto createWalletDto) {
         Wallet wallet = walletService.createWallet(createWalletDto);
 
         return ResponseEntity.ok(wallet);
