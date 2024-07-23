@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name="tb_wallet_type")
-public class WalltetType {
+public class WalletType {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -12,11 +12,11 @@ public class WalltetType {
 
     private String description;
 
-    public WalltetType() {
+    public WalletType() {
 
     }
 
-    public WalltetType(Long id, String description) {
+    public WalletType(Long id, String description) {
         this.id = id;
         this.description = description;
     }
@@ -49,8 +49,8 @@ public class WalltetType {
         private Long id;
         private String description;
 
-        public WalltetType get() {
-            return new WalltetType(id, description);
+        public WalletType get() {
+            return new WalletType(id, description);
         }
     }
 }
